@@ -68,8 +68,8 @@
       
       raycaster.setFromCamera(mouse,camera);
       
-      var intersects = raycaster.inteersectObjects(scene.children, true);
-      for (var i = 0; i <intersects.lenght; i++) {
+      var intersects = raycaster.intersectObjects(scene.children, true);
+      for (var i = 0; i <intersects.length; i++) {
         intersects[i].object.material.color.set(0xff0000)
       }
       
