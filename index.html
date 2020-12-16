@@ -30,7 +30,8 @@
       camera.updateProjectionMatrix();
     })
     
-   
+    var raycaster = new THREE.Raycaster(); 
+    var mouse = new THREE.Vextor2();
     
     
     //var geometry = new THREE.SphereGeometry(1, 4, 4);
@@ -58,6 +59,21 @@
       
     }
     
+    
+    function onMouseMove(event) {
+      event.preventDefault();
+      
+      mouse.x = (event.clientX /window.innerWidth) * 2-1;
+      mouse.y = - ( event.clientY /window.innerHeight) * 2-1;
+      
+      raycaster.setFromCamera(mouse,camera);
+      
+      var intersects = raycaster.inteersectObjects(scene.children, true);
+      for (var i = 0; i <intersects.lenght; i++) {
+        intersects[i].object.material.color.set(0xff0000)
+      }
+      
+    }
     render();
     
    this.tl =new TimelineMax({paused:true});
@@ -66,9 +82,9 @@
    this.tl.to(this.mesh.position, .5, {x: 2, ease: Expo.easeOut})
    this.tl.to(this.mesh.rotation, .5, {x: Math.PI*.5, ease: Expo.easeOut}, "=-1.5")
     
-    document.body.addEventListener('click', () => {
-                                   this.tl.play();
-    })
+    window.addEventListener('mousemouve', onMouseMove) 
+                                   
+   
   
   </script>
   
