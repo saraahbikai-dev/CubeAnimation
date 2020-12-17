@@ -31,7 +31,7 @@
     })
     
     var raycaster = new THREE.Raycaster(); 
-    var mouse = new THREE.Vextor2();
+    var mouse = new THREE.Vector2();
     
     
     //var geometry = new THREE.SphereGeometry(1, 4, 4);
@@ -76,7 +76,7 @@
     }
     render();
     
-   this.tl =new TimelineMax({paused:true});
+   this.tl =new TimelineMax({paused: true});
    this.tl.to(this.mesh.scale, 1, {x: 2, ease: Expo.easeOut})
    this.tl.to(this.mesh.scale, .5, {x: .5, ease: Expo.easeOut})
    this.tl.to(this.mesh.position, .5, {x: 2, ease: Expo.easeOut})
