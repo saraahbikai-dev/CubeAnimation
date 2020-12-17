@@ -63,10 +63,10 @@
     function onMouseMove(event) {
       event.preventDefault();
       
-      mouse.x = ( event.clientX /window.innerWidth) * 2 - 1;
-      mouse.y = - ( event.clientY /window.innerHeight) * 2 + 1;
+      mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+      mouse.y = - ( event.clientY / window.innerHeight) * 2 + 1;
       
-      raycaster.setFromCamera(mouse,camera);
+      raycaster.setFromCamera(mouse, camera);
       
       var intersects = raycaster.intersectObjects(scene.children, true);
       for (var i = 0; i < intersects.length; i++) {
@@ -82,7 +82,7 @@
    this.tl.to(this.mesh.position, .5, {x: 2, ease: Expo.easeOut})
    this.tl.to(this.mesh.rotation, .5, {x: Math.PI*.5, ease: Expo.easeOut}, "=-1.5")
     
-    window.addEventListener('mousemouve', onMouseMove) 
+    window.addEventListener('mousemove', onMouseMove);
                                    
    
   
