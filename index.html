@@ -70,17 +70,17 @@
       
       var intersects = raycaster.intersectObjects(scene.children, true);
       for (var i = 0; i < intersects.length; i++) {
-        intersects[i].object.material.color.set(0xff0000)
+         this.tl = new TimelineMax();
+         this.tl.to(intersects[1].object.scale, 1, {x: 2, ease: Expo.easeOut})
+         this.tl.to(intersects[1].object.scale, .5, {x: .5, ease: Expo.easeOut})
+         this.tl.to(intersects[1].object.position, .5, {x: 2, ease: Expo.easeOut})
+         this.tl.to(intersects[1].object.rotation, .5, {x: Math.PI*.5, ease: Expo.easeOut}, "=-1.5")
       }
       
     }
     render();
     
-   this.tl =new TimelineMax({paused: true});
-   this.tl.to(this.mesh.scale, 1, {x: 2, ease: Expo.easeOut})
-   this.tl.to(this.mesh.scale, .5, {x: .5, ease: Expo.easeOut})
-   this.tl.to(this.mesh.position, .5, {x: 2, ease: Expo.easeOut})
-   this.tl.to(this.mesh.rotation, .5, {x: Math.PI*.5, ease: Expo.easeOut}, "=-1.5")
+  
     
     window.addEventListener('mousemove', onMouseMove);
                                    
