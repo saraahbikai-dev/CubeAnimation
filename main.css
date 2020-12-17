@@ -8,7 +8,6 @@ canvas {
 }
 
 h1 {
-  
  position:absolute;
  top: 2em; 
  left: 2em; 
@@ -17,7 +16,7 @@ h1 {
  text-transform: uppercase;
  width: auto;
  line-height: .8em;
- border: 5px solid #000000;
+ border: 5px solid black;
  padding: .2em;
   
 }
