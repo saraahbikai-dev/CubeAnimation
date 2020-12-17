@@ -39,10 +39,18 @@
     var material = new THREE.MeshLambertMaterial({color:0xFFCC00})
     var mesh = new THREE.Mesh(geometry,material);
     
+    scene.add(mesh);
     //mesh.position.set(2,2,-2)
+    
+    var geometry = new THREE.BoxGeometry(1, 1, 1);
+    var material = new THREE.MeshLambertMaterial({color:0xFFCC00})
+    var mesh = new THREE.Mesh(geometry,material);
+    mesh.position.y = 2;
+    scene.add(mesh);
+  
    
     
-    scene.add(mesh);
+    
     var light= new THREE.PointLight(0xFFFFFF, 1, 500)
     light.position.set(10,0,25);
     scene.add(light);
